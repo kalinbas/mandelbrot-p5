@@ -4,6 +4,11 @@ let cy = 0;
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
+
+    // hack to make mouseClicked work on IOS
+    var el = document.getElementsByTagName("canvas")[0];
+    el.addEventListener("touchstart", mouseClicked, false);
+
     pixelDensity(1);
     noLoop();
 }
